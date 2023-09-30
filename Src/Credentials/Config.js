@@ -1,5 +1,7 @@
+require('dotenv').config();
+
 module.exports = {
-    prefix: ["Bot Prefix"],
-    botToken: "Bot Token",
-    ownerIds: ["Bot Owner ID"]
+    prefix: ["m!"],
+    botToken: process.env.DISCORD_TOKEN,
+    ownerIds: ["877190769159589988"]
 };
