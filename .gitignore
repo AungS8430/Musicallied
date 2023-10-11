@@ -4,3 +4,5 @@ guildCooldownDB.sqlite
 globalCooldownDB.sqlite
 channelCooldownDB.sqlite
 .env
+.vscode/
+test.js

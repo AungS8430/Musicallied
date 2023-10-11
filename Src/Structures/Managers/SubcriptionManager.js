@@ -1,6 +1,7 @@
 const { EmbedBuilder, ButtonBuilder, ActionRowBuilder } = require("discord.js");
 const { getChart } = require("billboard-top-100");
 const schema = require("../Schemas/Subscription.js");
+
 class SubscriptionManager {
     constructor() { 
         this.charts = ["hot-100", "billboard-200", "billboard-global-200", "artist-100"];
@@ -164,7 +165,7 @@ class SubscriptionManager {
         }
     }
     async update(client) {
-        let weekof;
+        var weekof;
         getChart((err, chart) => {
             if (err) console.log(err);
             weekof = chart.week;
