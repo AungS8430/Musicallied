@@ -1,8 +1,4 @@
 node_modules/
-json.sqlite
-guildCooldownDB.sqlite
-globalCooldownDB.sqlite
-channelCooldownDB.sqlite
 .env
 .vscode/
 test.js
