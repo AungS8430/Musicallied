@@ -14,7 +14,7 @@ module.exports = {
         }
     ],
     run: async(client, interaction) => {
-        interaction.deferReply();
+        await interaction.deferReply();
         const { GeniusClient } = require("../../../Events/Ready.js");
         const searches = await GeniusClient.songs.search(interaction.options.getString("artist"));
         const firstSong = searches[0];
@@ -33,7 +33,7 @@ module.exports = {
             .setURL(artist.url);
         const actionRow = new ActionRowBuilder()
             .addComponents(button);
-        interaction.editReply({
+        await interaction.editReply({
             embeds: [embed],
             components: [actionRow]
         });

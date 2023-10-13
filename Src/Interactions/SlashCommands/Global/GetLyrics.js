@@ -14,7 +14,7 @@ module.exports = {
         }
     ],
     run: async(client, interaction) => {
-        interaction.deferReply();
+        await interaction.deferReply();
         const { GeniusClient } = require("../../../Events/Ready.js");
         const song = interaction.options.getString("song");
         const searches = (await GeniusClient.songs.search(song)).slice(0, 5);
