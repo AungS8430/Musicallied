@@ -4,6 +4,7 @@ const Genius = require("genius-lyrics");
 module.exports = {
     name: "getlyricschoices",
     run: async(client, interaction) => {
+        await interaction.deferReply();
         const { GeniusClient } = require("../../Events/Ready.js");
         const value = interaction.values[0];
         const song = value.split(";")[0];
@@ -23,7 +24,7 @@ module.exports = {
             .setURL(firstSong.url);
         const actionRow = new ActionRowBuilder()
             .addComponents(button);
-        interaction.reply({
+        await interaction.editReply({
             embeds: [embed],
             components: [actionRow]
         });
